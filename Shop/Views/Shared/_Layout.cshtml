@@ -55,6 +55,7 @@
                             <li><a href="/">Сан-Антонио</a></li>
                         </ul>
                     </li>
+                    <li>@Html.Partial("_LoginPartial")</li>
                     </ul>
 </nav>
 
@@ -72,7 +73,10 @@
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/bootstrap.min.js"></script>*@
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 
