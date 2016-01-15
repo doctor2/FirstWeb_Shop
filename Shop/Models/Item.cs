@@ -15,17 +15,18 @@ namespace Shop.Models
     //}
 
     [Table("Computers")]
-    public class Computers{
+    public class Computers
+    {
         [Column("Id"), Key]
         [DatabaseGeneratedAttribute(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Column("Firm"), Required, MaxLength(200)]           //Not null
-        public string Firm{ get; set; }
-         [Column("Сharacteristics"), Required, MaxLength(200)]           //Not null
-        public string Сharacteristics{ get; set; }
+        public string Firm { get; set; }
+        [Column("Сharacteristics"), Required, MaxLength(200)]           //Not null
+        public string Сharacteristics { get; set; }
 
-         [Column("Number "), Required]           //Not null
-         public int Number { get; set; }
+        [Column("Number "), Required]           //Not null
+        public int Number { get; set; }
     }
 
 

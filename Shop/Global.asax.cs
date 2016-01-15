@@ -13,8 +13,8 @@ namespace Shop
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new ItemDbInitializer());
             AreaRegistration.RegisterAllAreas();
-        //    Database.SetInitializer(new ItemDbInitializer());
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }

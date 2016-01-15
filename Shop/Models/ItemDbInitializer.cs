@@ -10,8 +10,8 @@ namespace Shop.Models
     {
         protected override void Seed(ItemContext context)
         {
-            //context.Products.Add(new Item() { Id = 1, Name = "Product 1", Price = 10 });
-            //context.Products.Add(new Item() { Id = 2, Name = "Product 2", Price = 20 });
+            context.Comp.Add(new Computers() {Firm="HP", Number=1234567, Сharacteristics="Частота процессора и тд и тп"});
+            context.Comp.Add(new Computers() { Firm = "Lenovo", Number = 1234563, Сharacteristics = "Частота процессора и тд и тп" });
             //context.Products.Add(new Product() { Id = 3, Name = "Product 3", Price = 30 });
             //context.Products.Add(new Product() { Id = 4, Name = "Product 4", Price = 40 });
 

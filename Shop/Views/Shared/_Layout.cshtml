@@ -23,15 +23,40 @@
                 </a>
             </div>
             <nav>
-                <ul>
+                @*<ul>
                     <li>@Html.ActionLink("Люди", "Index", "Home") </li>
                     <li><a href="">сообщества</a></li>
                     <li><a href="">игры</a></li>
                     <li><a href="">музыка</a></li>
                     <li><a href="">помощь</a></li>
                     <li><a href="">выйти</a></li>
-                </ul>
-            </nav>
+                </ul>*@
+                <ul class="dropdown">
+                    <li class="dropdown-top">
+                        <a class="dropdown-top" href="/">Британия</a>
+                        <ul class="dropdown-inside">
+                            <li><a href="/">Лондон</a></li>
+                            <li><a href="/">Бирмингем</a></li>
+                            <li><a href="/">Лидс</a></li>
+                            <li><a href="/">Шеффилд</a></li>
+                            <li><a href="/">Манчестер</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-top">
+                        <a class="dropdown-top" href="/">США</a>
+                        <ul class="dropdown-inside">
+                            <li><a href="/">Нью-Йорк</a></li>
+                            <li><a href="/">Лос-Анжелес</a></li>
+                            <li><a href="/">Чикаго</a></li>
+                            <li><a href="/">Хьюстон</a></li>
+                            <li><a href="/">Филадельфия</a></li>
+                            <li><a href="/">Финикс</a></li>
+                            <li><a href="/">Сан-Антонио</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+</nav>
 
         </header>
         <section>
