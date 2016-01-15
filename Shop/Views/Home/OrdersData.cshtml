@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Shop.Models.Computers>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Firm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Сharacteristics)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+    </tr>
+}
