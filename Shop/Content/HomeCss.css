@@ -1,0 +1,90 @@
+﻿body {
+     margin:0;
+}
+section{
+    margin: 40px auto 0 auto;   
+        width: 790px;
+    height: 700PX;
+    outline: 3px solid #333;
+}
+
+#container_body-content {
+    margin-top:0;
+    padding:0px;   
+   margin:0px;   
+   display: block; 
+}
+
+#header_vk a{
+	font: bold 18px Tahoma;
+	padding: 5px 0 15px 0 ;
+	height: 20px;
+	width:140px;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	float: left;
+}
+#head_v{
+	text-align: center;
+	width: 20px;
+	height: 18px;
+	border-radius: 5px;
+	background: #fff;
+	float: left;
+	margin:2px 5px 20px 10px;
+	color: #587A9F;
+	font: bold 16px Tahoma;
+	padding-bottom: 3px;
+}
+header{
+	background: #587A9F;
+	height: 40px;
+	width:100%;
+	border-radius:  0px  0px 10px 10px;
+	position: absolute;
+}
+header input[name=search]{
+	border-radius: 2px;
+	margin: 9px 100px 0px 3px;
+	float:left;
+	font:  10px Tahoma;
+	color: #333;
+	width: 160px;
+}
+header nav ul{
+	margin: 0;
+	right: 5px;
+}
+header nav ul li{
+	float:left;
+	list-style: none;
+}
+header nav ul li a{
+ 	height: 20px;
+	text-decoration:none;
+	display:block;
+	padding: 12px 10px 8px 10px;
+	color:#E8EFF7;
+	font: bold 11px Tahoma;
+}
+header nav ul li a:hover{
+	background: #3D5E82;
+}
+#contact {
+    margin-top: 0px;
+    height:40px;
+    background-color:aqua;
+}
+#content {
+    margin: 0px auto;
+    padding-top: 80px;
+
+}
+footer {
+  margin-top: 0px;
+  text-align: right;
+}
+footer p{
+  padding-right:20px;
+}
