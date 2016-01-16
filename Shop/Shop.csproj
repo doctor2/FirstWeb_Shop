@@ -149,8 +149,10 @@
       <DependentUpon>ItemContext.mdf</DependentUpon>
     </Content>
     <Content Include="Content\HomeCss.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\animenu.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
