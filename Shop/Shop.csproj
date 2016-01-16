@@ -140,6 +140,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Autentification-20160115073312.mdf" />
+    <Content Include="App_Data\aspnet-Autentification-20160115073312_log.ldf">
+      <DependentUpon>aspnet-Autentification-20160115073312.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\ItemContext.mdf" />
     <Content Include="App_Data\ItemContext_log.ldf">
       <DependentUpon>ItemContext.mdf</DependentUpon>
