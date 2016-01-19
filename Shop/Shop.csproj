@@ -148,7 +148,7 @@
     <Content Include="App_Data\ItemContext_log.ldf">
       <DependentUpon>ItemContext.mdf</DependentUpon>
     </Content>
-    <Content Include="Content\HomeCss.css" />
+    <Content Include="Content\home.css" />
     <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -168,6 +168,7 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
