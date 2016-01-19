@@ -21,8 +21,10 @@ namespace Shop
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                
                 "~/Content/style.css",                                              //"~/Content/bootstrap.css",
-                      "~/Content/home.css"));
+                      "~/Content/home.css",
+                      "~/Content/normalize.css"));
         }
     }
 }

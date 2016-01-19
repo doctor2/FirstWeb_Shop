@@ -149,6 +149,7 @@
       <DependentUpon>ItemContext.mdf</DependentUpon>
     </Content>
     <Content Include="Content\home.css" />
+    <Content Include="Content\normalize.css" />
     <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -207,6 +208,7 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_NavigatMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

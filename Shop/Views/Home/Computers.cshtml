@@ -9,7 +9,8 @@
         LoadingElementId = "loadingIndicator"
     };
 }
-<div id="content">
+@Html.Partial("_NavigatMenu")
+<section class="content">
     <h2>Computers</h2>
     @using (Ajax.BeginForm(options))
     {
@@ -41,4 +42,4 @@
 
     @*Ненавязивый JavaScript для выполнения запроса на сервер без полного обновления страницы*@
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-</div>
+</section>
