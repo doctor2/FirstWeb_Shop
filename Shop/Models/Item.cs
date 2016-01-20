@@ -20,6 +20,8 @@ namespace Shop.Models
         [Column("Id"), Key]
         [DatabaseGeneratedAttribute(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [Column("ImagesPath"), Required, MaxLength(200)]           //Not null
+        public string ImagesPath { get; set; }
         [Column("Firm"), Required, MaxLength(200)]           //Not null
         public string Firm { get; set; }
         [Column("Сharacteristics"), Required, MaxLength(200)]           //Not null
@@ -36,6 +38,9 @@ namespace Shop.Models
         [Column("Id"), Key]
         [DatabaseGeneratedAttribute(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [Column("ImagesPath"), Required, MaxLength(200)]           //Not null
+        public string ImagesPath { get; set; }
+
         [Column("Firm"), Required, MaxLength(200)]           //Not null
         public string Firm { get; set; }
         [Column("Сharacteristics"), Required, MaxLength(200)]           //Not null

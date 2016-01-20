@@ -18,6 +18,7 @@
         <table cellpadding="4">
             <thead>
                 <tr>
+                    <th>Images</th>
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Customer</th>
@@ -31,7 +32,7 @@
         </table>
         <p>
             @*При отправке обратного запроса на сервер, в форме будет содержаться поле id которое методом действия будет использоваться для фильтрации данных*@
-            @Html.DropDownList("id", new SelectList(new[] { "All", "HP", "Lenovo" }, (Model ?? "All")))
+            @Html.DropDownList("id", new SelectList(new[] { "All", "HP", "Lenovo","ASUS" }, (Model ?? "All")))
             <input type="submit" value="Submit" />
         </p>
         <p>
@@ -43,3 +44,4 @@
     @*Ненавязивый JavaScript для выполнения запроса на сервер без полного обновления страницы*@
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 </section>
+@Html.Partial("_Aside")

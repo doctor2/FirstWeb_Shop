@@ -149,6 +149,9 @@
       <DependentUpon>ItemContext.mdf</DependentUpon>
     </Content>
     <Content Include="Content\home.css" />
+    <Content Include="Content\Images\img1.jpg" />
+    <Content Include="Content\Images\img2.jpg" />
+    <Content Include="Content\Images\img4.jpg" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
@@ -209,6 +212,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavigatMenu.cshtml" />
+    <Content Include="Views\Shared\_Aside.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

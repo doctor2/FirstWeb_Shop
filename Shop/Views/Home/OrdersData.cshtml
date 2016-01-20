@@ -4,6 +4,9 @@
 {
     <tr>
         <td>
+            <img class="product" src="@Html.DisplayFor(modelItem => item.ImagesPath)" />  @*grid.Column(header: "Логотип", format: , canSort:false),*@
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Firm)
         </td>
         <td>

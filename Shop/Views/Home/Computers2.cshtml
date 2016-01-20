@@ -5,22 +5,14 @@
 }
 
 
-<nav class="rightmenu">
-    <h1>Navigation</h1>
-
-    <ul>
-        <li><a href="#" title="Lorum ipsum dolor sit amet">Lorem</a></li>
-        <li><a href="#" title="Aliquam tincidunt mauris eu risus">Aliquam</a></li>
-        <li><a href="#" title="Morbi in sem quis dui placerat ornare">Morbi</a></li>
-        <li><a href="#" title="Praesent dapibus, neque id cursus faucibus">Praesent</a></li>
-        <li><a href="#" title="Pellentesque fermentum dolor">Pellentesque</a></li>
-    </ul>
-</nav>
-
+@Html.Partial("_NavigatMenu")
 <section class="content">
     <h2>Computers2</h2>
     <table>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagesPath)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Firm)
             </th>
@@ -35,6 +27,9 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td >
+                    <img class="product" src="@Html.DisplayFor(modelItem => item.ImagesPath)" />  @*grid.Column(header: "Логотип", format: , canSort:false),*@
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Firm)
                 </td>
@@ -48,12 +43,6 @@
         }
     </table>
 </section>
-
-<aside>
-    <h1>Aside</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-    </p>
-</aside>
+@Html.Partial("_Aside")
 
 
