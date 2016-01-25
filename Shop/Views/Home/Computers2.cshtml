@@ -43,10 +43,13 @@
         }
     </table>
     <p>
+@using (Html.BeginForm())
+        {
         @Html.DropDownList("ParentID", "All")
         @*@Html.DropDownList("id",
                        (IEnumerable<SelectListItem>)ViewBag.ParentID)*@
         <input type="submit" value="Submit" />
+}
 
         @*@using (Html.BeginForm())
         {
@@ -55,7 +58,19 @@
             <input type="submit" value="Filter" />
         </p>
         }*@
+
+        <!--Данные отправляются с помощью POST запроса-->
     </p>
+    <p>
+        <div style="color:aqua">@ViewBag.Parent</div>
+        <br />
+        <div>@ViewBag.Message</div>
+    </p>
+    @using (Html.BeginForm())
+        {
+        <input type="text" name="message" />
+        <input type="submit" value="Отправить на сервер" />
+    }
 </section>
 @Html.Partial("_Aside")
 

@@ -10,10 +10,12 @@ namespace Shop.Controllers
     public class HomeController : Controller
     {
         private ItemContext db = new ItemContext();
+
         //
         // GET: /Home/
         public ActionResult Index()
         {
+            HttpCookie cookie = Request.Cookies["cookieName"];
             PopulateDepartmentsDropDownList();
             return View();
         }
@@ -45,29 +47,54 @@ namespace Shop.Controllers
             //    ViewBag.DepartmentID = new SelectList(phones);
             //}
 
-  
+
         public ActionResult Computers2()
         {
+            
             var phones = db.Comp.Select(p => p.Firm);
-
-
+            ViewBag.ApplyDiscount = false;
+         //   ViewBag.ApplyDiscount = ViewData.Computers2.checbox1;
+            //ViewBag.ApplyDiscount = Request.Form["checbox1"];
+            ViewBag.Parent = "нееет";
             ViewBag.ParentID = new SelectList(phones );//new SelectList("all",phones);
             return View(db.Comp.ToList());
         }
 
         [HttpPost]
-        public ActionResult Computers2(string id)
+        public ActionResult Computers2(string mycheck, string message, string ParentID, string checbox1)
         {
+            ViewBag.ApplyDiscount = checbox1;
+            if (Request.Form["mycheck"] != null && Convert.ToBoolean(mycheck))
+            {
+                ViewBag.Parent = "да, да, да";
+            }
+           // ViewBag.Parent = Request.Form["mycheck"];
+            ViewBag.Message = message;
+
             var data = db.Comp.ToList();
-            if (!string.IsNullOrEmpty(id) && id != "All")
+            if (!string.IsNullOrEmpty(ParentID) && ParentID != "All")
             {
                 // выполняем выборку по свойству Customer если значение id не пустое и не равное "All"
-                data = data.Where(e => e.Firm == id).ToList();
+                data = data.Where(e => e.Firm == ParentID).ToList();
             }
             // id - имя клиента, заказы которого необходимо выводить на странице.
-            return View( data);
-        }
+            var phones = db.Comp.Select(p => p.Firm);
 
+            ViewBag.ParentID = new SelectList(phones);//new SelectList("all",phones);
+            return View(data);
+        }
+        //[HttpPost]
+        //public ActionResult Comput(string mycheck)
+        //{
+        //    if (Request.Form["mycheck"] != null && Convert.ToBoolean(mycheck))
+        //    {
+        //        ViewBag.Parent = "да, да, да";
+        //    }
+        //    var phones = db.Comp.Select(p => p.Firm);
+        //    var data = db.Comp.ToList();
+        //    ViewBag.ParentID = new SelectList(phones);//new SelectList("all",phones);
+        //    return RedirectToAction("Computers2", "Home");
+        //}
 
         //
         // GET: /Home/Computers

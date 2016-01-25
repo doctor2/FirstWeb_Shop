@@ -92,6 +92,7 @@
 }
 .animenu__nav > li:hover > a {
   color: #fff;
+  text-decoration: none;
 }
 
 .animenu__nav__child {
@@ -134,6 +135,7 @@
   background-color: #0186ba;
   border-color: #0186ba;
   color: #fff;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 767px) {
