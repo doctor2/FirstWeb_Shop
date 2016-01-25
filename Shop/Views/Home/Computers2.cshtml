@@ -27,7 +27,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td >
+                <td>
                     <img class="product" src="@Html.DisplayFor(modelItem => item.ImagesPath)" />  @*grid.Column(header: "Логотип", format: , canSort:false),*@
                 </td>
                 <td>
@@ -42,6 +42,20 @@
             </tr>
         }
     </table>
+    <p>
+        @Html.DropDownList("ParentID", "All")
+        @*@Html.DropDownList("id",
+                       (IEnumerable<SelectListItem>)ViewBag.ParentID)*@
+        <input type="submit" value="Submit" />
+
+        @*@using (Html.BeginForm())
+        {
+        <p>
+            Select Department: @Html.DropDownList("SelectedDepartment", "All")
+            <input type="submit" value="Filter" />
+        </p>
+        }*@
+    </p>
 </section>
 @Html.Partial("_Aside")
 

@@ -24,7 +24,7 @@ namespace Shop
                 
                 "~/Content/style.css",                                              //"~/Content/bootstrap.css",
                       "~/Content/home.css",
-                      "~/Content/normalize.css"));
+                      "~/Content/bootstrap.min.css"));
         }
     }
 }

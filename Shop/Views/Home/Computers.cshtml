@@ -15,7 +15,7 @@
     @using (Ajax.BeginForm(options))
     {
         <div id="loadingIndicator" style="display:none;">Loading...</div>
-        <table cellpadding="4">
+        <table cellpadding="4" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Images</th>
@@ -32,11 +32,8 @@
         </table>
         <p>
             @*При отправке обратного запроса на сервер, в форме будет содержаться поле id которое методом действия будет использоваться для фильтрации данных*@
-            @Html.DropDownList("id", new SelectList(new[] { "All", "HP", "Lenovo","ASUS" }, (Model ?? "All")))
+            @Html.DropDownList("id", new SelectList(new[] { "All", "HP", "Lenovo", "ASUS" }, (Model ?? "All")))
             <input type="submit" value="Submit" />
-        </p>
-        <p>
-            <input type="text" class="form-control" />
         </p>
 
     }

@@ -14,8 +14,60 @@ namespace Shop.Controllers
         // GET: /Home/
         public ActionResult Index()
         {
+            PopulateDepartmentsDropDownList();
             return View();
         }
+
+        private void PopulateDepartmentsDropDownList(object selectedDepartment = null)
+        {
+            var data = db.Comp.ToList();
+
+            //Ну а собственно следущая строка и является модификацией этого метода, изначально описанного в примере Contoso University
+            //NewsMID = 0 -  это и есть value
+            //Title = "Add to root" - text
+            // departmentsQuery.Add(new NewsM { NewsMID = 0, Title = "Add to root" });
+            var phones = db.Comp.Select(p => p.Firm);
+            ViewBag.ParentID = new SelectList(phones);
+        }
+        //private void PopulateDepartmentsDropDownList()
+        //{
+
+            //    var data = db.Comp.ToList();
+            //    //if (!string.IsNullOrEmpty(id) && id != "All")
+            //    //{
+            //    //    // выполняем выборку по свойству Customer если значение id не пустое и не равное "All"
+            //    //    data = data.Where(e => e.Firm == id).ToList();
+            //    //}
+            //    //var departmentsQuery = from d in data.Firm
+            //    //                       orderby d.Name
+            //    //                       select d;
+            //        var phones = db.Comp.Select(p => p.Firm); 
+            //    ViewBag.DepartmentID = new SelectList(phones);
+            //}
+
+  
+        public ActionResult Computers2()
+        {
+            var phones = db.Comp.Select(p => p.Firm);
+
+
+            ViewBag.ParentID = new SelectList(phones );//new SelectList("all",phones);
+            return View(db.Comp.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult Computers2(string id)
+        {
+            var data = db.Comp.ToList();
+            if (!string.IsNullOrEmpty(id) && id != "All")
+            {
+                // выполняем выборку по свойству Customer если значение id не пустое и не равное "All"
+                data = data.Where(e => e.Firm == id).ToList();
+            }
+            // id - имя клиента, заказы которого необходимо выводить на странице.
+            return View( data);
+        }
+
 
         //
         // GET: /Home/Computers
@@ -23,11 +75,7 @@ namespace Shop.Controllers
         public ActionResult Computers()
         {
             return View(); //db.Comp.ToList()
-        
-        }
-        public ActionResult Computers2()
-        {
-            return View(db.Comp.ToList());
+
         }
 
         [HttpPost]
@@ -47,5 +95,16 @@ namespace Shop.Controllers
             }
             return PartialView(data);
         }
-	}
+        protected override void Dispose(bool disposing)
+
+        {
+
+            if (disposing)
+
+                db.Dispose();
+
+            base.Dispose(disposing);
+
+        }
+    }
 }

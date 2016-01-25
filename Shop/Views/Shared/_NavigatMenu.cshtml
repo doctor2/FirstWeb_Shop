@@ -8,5 +8,27 @@
         <li><a href="#" title="Praesent dapibus, neque id cursus faucibus">Praesent</a></li>
         <li><a href="#" title="Pellentesque fermentum dolor">Pellentesque</a></li>
     </ul>
-</nav>
+    <br>
+    <h2>Simple Collapsible</h2>
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+    <div id="demo" class="collapse checkbox" style="max-width:90px">
+            @using (Html.BeginForm("Home", "index"))
+            {
+                @:Флажок2
+                @Html.CheckBox("myCheckBox", false)
+                <br />
+                @:Флажок3
+                @Html.CheckBox("myCheckBox", false)
+                <br />
 
+                @:Флажок
+                @Html.CheckBox("myCheckBox", false)
+                <br />
+
+
+            }
+    </div>
+    <br />
+
+
+</nav>

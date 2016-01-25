@@ -4,12 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/home.css")
-    @Styles.Render("~/Content/normalize.css")
-    @Styles.Render("~/Content/style.css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @*@Styles.Render("~/Content/home")
+    @Styles.Render("~/Content/bootstrap.min")
+    @Styles.Render("~/Content/style")*@
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     @*<link href="~/Content/HomeCss.css" rel="stylesheet" type="text/css" />*@
     @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
     @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+    <style>
+        .panel-heading span {
+            margin-top: -20px;
+            font-size: 15px;
+        }
+
+        .row {
+            margin-top: 40px;
+            padding: 0 10px;
+        }
+
+        .clickable {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div id="container_body-content">
