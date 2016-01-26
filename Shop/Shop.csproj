@@ -215,6 +215,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavigatMenu.cshtml" />
     <Content Include="Views\Shared\_Aside.cshtml" />
+    <Content Include="Views\Home\OrdersData3.cshtml" />
+    <Content Include="Views\Home\Computers3.cshtml" />
+    <Content Include="Views\Home\NavigatMenu3.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

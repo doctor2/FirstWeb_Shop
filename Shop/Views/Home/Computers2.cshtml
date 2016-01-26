@@ -31,7 +31,7 @@
                     <img class="product" src="@Html.DisplayFor(modelItem => item.ImagesPath)" />  @*grid.Column(header: "Логотип", format: , canSort:false),*@
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Firm)
+                    @item.Firm @*@Html.DisplayFor(modelItem => item.Firm)*@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Сharacteristics)
@@ -43,21 +43,26 @@
         }
     </table>
     <p>
-@using (Html.BeginForm())
+        @using (Html.BeginForm())
         {
-        @Html.DropDownList("ParentID", "All")
-        @*@Html.DropDownList("id",
-                       (IEnumerable<SelectListItem>)ViewBag.ParentID)*@
-        <input type="submit" value="Submit" />
-}
-
-        @*@using (Html.BeginForm())
-        {
-        <p>
-            Select Department: @Html.DropDownList("SelectedDepartment", "All")
-            <input type="submit" value="Filter" />
-        </p>
-        }*@
+            @Html.DropDownList("ParentID", "All")
+            @*@Html.DropDownList("id",
+                (IEnumerable<SelectListItem>)ViewBag.ParentID)*@
+            <input type="submit" value="Submit" />
+        }
+        <div class="checkbox">
+            @using (Html.BeginForm())
+            { @: чекбоксы
+                <br />
+                foreach (var item in Model)
+                {
+                    @Html.CheckBox(item.Firm, false);
+                    @Html.DisplayFor(modelItem => item.Firm);
+                <br />
+                }
+                 <input type="submit" value="Отправить" />
+            }
+        </div>
 
         <!--Данные отправляются с помощью POST запроса-->
     </p>
@@ -67,7 +72,7 @@
         <div>@ViewBag.Message</div>
     </p>
     @using (Html.BeginForm())
-        {
+    {
         <input type="text" name="message" />
         <input type="submit" value="Отправить на сервер" />
     }

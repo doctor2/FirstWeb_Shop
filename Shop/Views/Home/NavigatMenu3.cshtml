@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Shop.Models.Computers>
+@{
+    ViewBag.Title = "NavigatMenu3";
+    var options = new AjaxOptions()
+    {
+        UpdateTargetId = "tabledata",
+        Url = Url.Action("OrdersData"),
+        LoadingElementId = "loadingIndicator"
+    };
+}
+
+
+<nav class="rightmenu">
+
+    <h2>NavigatMenu3</h2>
+    <br>
+    <h2>Simple Collapsible</h2>
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+    <div id="demo" class="collapse checkbox" style="max-width:90px; margin-left:20px; ">
+   <!-- Динамические чекбоксы-->         
+        <div class="checkbox">
+            @using (Ajax.BeginForm(options))
+               { @: чекбоксы
+                <br />
+                foreach (var item in Model)
+                {
+                    @Html.CheckBox(item.Firm, false);
+                @Html.DisplayFor(modelItem => item.Firm);
+                <br />
+                }
+                <input type="submit" value="Отправить" />
+            }
+        </div>
+    </div>
+    <br />
+
+
+</nav>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+

@@ -10,7 +10,6 @@ namespace Shop.Controllers
     public class HomeController : Controller
     {
         private ItemContext db = new ItemContext();
-
         //
         // GET: /Home/
         public ActionResult Index()
@@ -47,12 +46,47 @@ namespace Shop.Controllers
             //    ViewBag.DepartmentID = new SelectList(phones);
             //}
 
+        public ActionResult Computers3()
+        {
+            return View();
 
+        }
+        public ActionResult OrdersData3() //List<Computers> data
+        {
+           // var mas =db.Comp.ToList();
+            var data = db.Comp.ToList();
+            List<string> list = new List<string>();
+            foreach (var item in data)
+            {
+                if (Request.Form[item.Firm] != null && Request.Form[item.Firm] == "true,false")
+                {
+                    list.Add( item.Firm.ToString());
+                }
+            }
+            if (list.Count > 0)
+            {
+                data =  data.Where(e => list.Contains(e.Firm)).ToList();
+            }
+            return PartialView(data);
+        }
+        public ActionResult NavigatMenu3()
+        {
+            var data = db.Comp.ToList();
+            OrdersData3();
+            return PartialView(data);
+        }
+        //[HttpPost]
+        //public ActionResult NavigatMenu3( string id)
+        //{
+        //    var data = db.Comp.ToList();
+        //    OrdersData3();
+        //    return PartialView(data);
+        //}
         public ActionResult Computers2()
         {
             
             var phones = db.Comp.Select(p => p.Firm);
-            ViewBag.ApplyDiscount = false;
+          //  ViewBag.ApplyDiscount;
          //   ViewBag.ApplyDiscount = ViewData.Computers2.checbox1;
             //ViewBag.ApplyDiscount = Request.Form["checbox1"];
             ViewBag.Parent = "нееет";
@@ -61,17 +95,28 @@ namespace Shop.Controllers
         }
 
         [HttpPost]
-        public ActionResult Computers2(string mycheck, string message, string ParentID, string checbox1)
+        public ActionResult Computers2(string mycheck, string message, string ParentID)
         {
-            ViewBag.ApplyDiscount = checbox1;
+            var dfd = Request.Form["mycheck"] != null && Request.Form["mycheck"] == "true,false";
             if (Request.Form["mycheck"] != null && Convert.ToBoolean(mycheck))
             {
                 ViewBag.Parent = "да, да, да";
             }
            // ViewBag.Parent = Request.Form["mycheck"];
             ViewBag.Message = message;
-
+            
             var data = db.Comp.ToList();
+            //string temp = string.Empty;
+            //var mas = data.Select(e => e.Firm).ToList();
+            //foreach (var item in data)
+            //{
+            //    if (Request.Form[item.Firm]== "true,false")
+            //    {
+            //        temp = temp + item.Firm + ", ";
+            //    }
+            //    //var sdf = Request.Form[item.Firm];
+            //}
+            //data = data.Where(e => e.Firm == temp).ToList();
             if (!string.IsNullOrEmpty(ParentID) && ParentID != "All")
             {
                 // выполняем выборку по свойству Customer если значение id не пустое и не равное "All"
@@ -105,12 +150,12 @@ namespace Shop.Controllers
 
         }
 
-        [HttpPost]
-        public ActionResult Computers(string id)
-        {
-            // id - имя клиента, заказы которого необходимо выводить на странице.
-            return View("Computers", (object)id);
-        }
+        //[HttpPost]
+        //public ActionResult Computers(string id)
+        //{
+        //    // id - имя клиента, заказы которого необходимо выводить на странице.
+        //    return View("Computers", (object)id);
+        //}
 
         public ActionResult OrdersData(string id)
         {

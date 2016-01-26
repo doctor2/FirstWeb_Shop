@@ -16,19 +16,21 @@
         @using (Html.BeginForm())
         {
 
-            @Html.CheckBox("mycheck", false) //, htmlAttributes: new { name = "mycheck" }  @*"Comput","Home"*@
+            @Html.CheckBox("mycheck", true) //, htmlAttributes: new { name = "mycheck" }  @*"Comput","Home"*@
             @:Флажок2
             <br />
+             @*@foreach (var item in Model)
+            {
 
-            @Html.CheckBox("myCheckBox", false)
-            @:Флажок3
+                  @Html.CheckBox(  @Html.DisplayFor(modelItem => item.Firm),false)
+            }*@
+             @*@Html.CheckBox("myCheckBox", false, new { @id = "checbox11", @class = "checkbox" })*@
+            <input type="checkbox"  name="checbox1" />
+            @:Флажок43534
             <br />
-            @Html.CheckBox("myCheckBox", false)
-            @:Флажок4
-            <br />
-             <input type="checkbox" checked="@ViewBag.ApplyDiscount" name="checbox1" />
+             @*<input type="checkbox" checked="@ViewBag.ApplyDiscount" name="checbox1" />
             @:Скидка:
-            <br />
+            <br />*@
             <input type="submit" value="Submit" />
 
 
