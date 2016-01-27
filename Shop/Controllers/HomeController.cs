@@ -71,7 +71,7 @@ namespace Shop.Controllers
         }
         public ActionResult NavigatMenu3()
         {
-            var data = db.Comp.ToList();
+            var data = db.Comp.ToList(); //.Select(e => e.Firm)
             OrdersData3();
             return PartialView(data);
         }

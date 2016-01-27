@@ -17,15 +17,18 @@
     <h2>Simple Collapsible</h2>
     <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
     <div id="demo" class="collapse checkbox" style="max-width:90px; margin-left:20px; ">
+
    <!-- Динамические чекбоксы-->         
         <div class="checkbox">
+            <h3>Чекбоксы</h3>
             @using (Ajax.BeginForm(options))
-               { @: чекбоксы
+               { 
+                
                 <br />
-                foreach (var item in Model)
+                   foreach (var item in Model.Select(e => e.Firm).Distinct())
                 {
-                    @Html.CheckBox(item.Firm, false);
-                @Html.DisplayFor(modelItem => item.Firm);
+                    @Html.CheckBox(item, false);
+                @Html.DisplayFor(modelItem => item);
                 <br />
                 }
                 <input type="submit" value="Отправить" />
