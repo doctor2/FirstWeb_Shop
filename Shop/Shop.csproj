@@ -140,13 +140,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-Autentification-20160115073312.mdf" />
-    <Content Include="App_Data\aspnet-Autentification-20160115073312_log.ldf">
-      <DependentUpon>aspnet-Autentification-20160115073312.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\ItemContext.mdf" />
     <Content Include="App_Data\ItemContext_log.ldf">
       <DependentUpon>ItemContext.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Shop-20160128113653.mdf" />
+    <Content Include="App_Data\Shop-20160128113653_log.ldf">
+      <DependentUpon>Shop-20160128113653.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\home.css" />
@@ -175,18 +175,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\AccountViewModels.cs" />
     <Compile Include="Models\Account\IdentityModels.cs" />
-    <Compile Include="Models\Account\ManageViewModels.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemContext.cs" />
     <Compile Include="Models\ItemDbInitializer.cs" />
@@ -199,18 +196,6 @@
     <Content Include="Views\Home\Computers.cshtml" />
     <Content Include="Views\Home\Computers2.cshtml" />
     <Content Include="Views\Home\OrdersData.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavigatMenu.cshtml" />
@@ -218,6 +203,15 @@
     <Content Include="Views\Home\OrdersData3.cshtml" />
     <Content Include="Views\Home\Computers3.cshtml" />
     <Content Include="Views\Home\NavigatMenu3.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -14,7 +14,11 @@ namespace Shop.Controllers
         // GET: /Home/
         public ActionResult Index()
         {
-            HttpCookie cookie = Request.Cookies["cookieName"];
+            HttpCookie myCookie = new HttpCookie("UserSettings");
+            myCookie["Font"] = "Arial";
+            myCookie["Color"] = "Blue";
+            myCookie.Expires = DateTime.Now.AddDays(1d);
+            Response.Cookies.Add(myCookie);
             PopulateDepartmentsDropDownList();
             return View();
         }
@@ -97,26 +101,23 @@ namespace Shop.Controllers
         [HttpPost]
         public ActionResult Computers2(string mycheck, string message, string ParentID)
         {
+            string userSettings="";
             var dfd = Request.Form["mycheck"] != null && Request.Form["mycheck"] == "true,false";
             if (Request.Form["mycheck"] != null && Convert.ToBoolean(mycheck))
             {
-                ViewBag.Parent = "да, да, да";
+                if (Request.Cookies["UserSettings"] != null)
+                {
+                   
+                    if (Request.Cookies["UserSettings"]["Font"] != null)
+                    { userSettings = Request.Cookies["UserSettings"]["Font"]; }
+                }
+                ViewBag.Parent = userSettings;//"да, да, да";
             }
            // ViewBag.Parent = Request.Form["mycheck"];
             ViewBag.Message = message;
             
             var data = db.Comp.ToList();
-            //string temp = string.Empty;
-            //var mas = data.Select(e => e.Firm).ToList();
-            //foreach (var item in data)
-            //{
-            //    if (Request.Form[item.Firm]== "true,false")
-            //    {
-            //        temp = temp + item.Firm + ", ";
-            //    }
-            //    //var sdf = Request.Form[item.Firm];
-            //}
-            //data = data.Where(e => e.Firm == temp).ToList();
+
             if (!string.IsNullOrEmpty(ParentID) && ParentID != "All")
             {
                 // выполняем выборку по свойству Customer если значение id не пустое и не равное "All"
