@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Shop.Models
 {
-    public class ItemDbInitializer : DropCreateDatabaseAlways<ItemContext>
+    public class ItemDbInitializer : DropCreateDatabaseIfModelChanges<ItemContext>
     {
         protected override void Seed(ItemContext context)
         {
