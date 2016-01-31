@@ -16,7 +16,13 @@
 .animenu__toggle:hover {
   background-color: #ff6a00;
 }
+.animenu__nav > li:first-child{
+    padding-left:0px !important;
+    margin-left:-100px  !important;
+    position:relative !important;
+    float:left;
 
+}
 .animenu__toggle__bar {
   display: block;
   width: 20px;

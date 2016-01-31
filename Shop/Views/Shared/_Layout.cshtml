@@ -6,41 +6,28 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @*<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">*@
     @*@Styles.Render("~/Content/home")
-    @Styles.Render("~/Content/bootstrap.min")
-    @Styles.Render("~/Content/style")*@
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    @*<link href="~/Content/HomeCss.css" rel="stylesheet" type="text/css" />*@
+        @Styles.Render("~/Content/bootstrap.min")
+        @*<link href="~/Content/HomeCss.css" rel="stylesheet" type="text/css" />*@
     @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
     @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
-    <style>
-        .panel-heading span {
-            margin-top: -20px;
-            font-size: 15px;
-        }
-
-        .row {
-            margin-top: 40px;
-            padding: 0 10px;
-        }
-
-        .clickable {
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
-    <div id="container_body-content">
-        <div id="contact">
-            Контактная информация
+    <div class="body-content">
+        <div class="contact">
+            <div class="layout-positioner">
+                <img class="product" src="~/Content/Images/shop.jpg" />
+                <span>Контактная информация</span>
+            </div>
         </div>
         <header>
             <nav class="animenu">
-                @*<button class="animenu__toggle">
+                <button class="animenu__toggle">
                     <span class="animenu__toggle__bar"></span>
                     <span class="animenu__toggle__bar"></span>
                     <span class="animenu__toggle__bar"></span>
-                </button>*@
+                </button>
                 <ul class="animenu__nav">
                     <li>
                         @Html.ActionLink("Главная", "Index", "Home")
@@ -61,7 +48,6 @@
                             <li><a href="">Sub Item 3</a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="#">About</a>
                     </li>
@@ -71,24 +57,24 @@
                     <li>@Html.Partial("_LoginPartial")</li>
                 </ul>
             </nav>
-
-
         </header>
-        <section class="main">        
-                @RenderBody()
-            
+        <section class="main">
+            @RenderBody()
+
         </section>
         <footer>
             <hr />
-            <p>&copy; @DateTime.Now.Year - Made by Doctor</p>
+            <div class="layout-positioner">
+                <p>&copy; @DateTime.Now.Year - Made by Doctor</p>
+            </div>
         </footer>
     </div>
-    @*<script src="~/Scripts/bootstrap.min.js"></script>*@
     @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")*@
+        @Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/animenu.js"></script>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
 </body>
 </html>
 

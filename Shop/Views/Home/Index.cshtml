@@ -3,22 +3,26 @@
 }
 @Html.Partial("_NavigatMenu")
 
-
 <section class="content">
-    @for (int i = 0; i < 5; i++)
+    @for (int i = 0; i < 2; i++)
     {
         <h2>Index</h2>
-        if (i == 2)
-        {
-            @Html.ActionLink("Переход на компьютер", "Computers", "Home");
-
-            <br />
-            @Html.ActionLink("Переход на компьютер2", "Computers2", "Home")
-        }
-        <h3>sdvsdvsv    </h3>
     }
     <div class="row">
         <div class="col-md-5">
+            @*<div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title ">Panel 1</h3>
+                    <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                </div>
+                <div class="panel-body">
+                    Founded in 1892 and headquartered in Fairfield, CT, LexisNexis Corporate Affiliations
+                    is a technology and financial services company.
+                    The company offers products and services ranging from aircraft engines, power generation,
+                    water processing, and house
+                </div>
+            </div>*@  
+            <hr />
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default" id="panel1">
                     <div class="panel-heading">
@@ -35,22 +39,10 @@
                     </div>
                 </div>
             </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title ">Panel 1</h3>
-                    <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-                </div>
-                    <div class="panel-body">
-                        Founded in 1892 and headquartered in Fairfield, CT, LexisNexis Corporate Affiliations
-                        is a technology and financial services company.
-                        The company offers products and services ranging from aircraft engines, power generation,
-                        water processing, and house
-                    </div>
-            </div>
         </div>
     </div>
-    <script type="text/javascript">
+    
+    @*<script type="text/javascript">
     jQuery(function ($) {
         $('.panel-heading span.clickable').on("click", function (e) {
             if ($(this).hasClass('panel-collapsed')) {
@@ -67,7 +59,7 @@
             }
         });
     });
-    </script>
+    </script>*@
 </section>
 @Html.Partial("_Aside")
 
