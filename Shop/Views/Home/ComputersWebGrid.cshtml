@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Shop.Models.Computers>
+
+@{
+    ViewBag.Title = "ComputersWebGrid";
+    var grid = new WebGrid(Model);
+}
+
+@Html.Partial("_NavigatMenu")
+<section class="content">
+    <h2>ComputersWebGrid</h2>
+    @*Получение разметки*@
+    @grid.GetHtml( tableStyle: "table table-striped table-bordered",
+    columns: grid.Columns(
+        grid.Column(header: "Картинка", format: @<img class="product" src="@item.ImagesPath" /> ), //, canSort: false
+        grid.Column(columnName: "Firm", header: "Имя"),
+        grid.Column(columnName: "Сharacteristics", header: "Характеристики"),
+        grid.Column(header: "Номер", columnName: "Number")
+    )
+)
+
+    <p>
+        @using (Html.BeginForm())
+        {
+            @Html.DropDownList("ParentID", "All")
+            @*@Html.DropDownList("id",
+                (IEnumerable<SelectListItem>)ViewBag.ParentID)*@
+            <input type="submit" value="Submit" />
+        }
+        <div class="checkbox">
+            @using (Html.BeginForm())
+            { @: чекбоксы
+                <br />
+                foreach (var item in Model)
+                {
+                    @Html.CheckBox(item.Firm, false);
+                    @Html.DisplayFor(modelItem => item.Firm);
+                    <br />
+                }
+                <input type="submit" value="Отправить" />
+            }
+            @Html.CheckBox(Model.First().Firm, false);
+            @Html.DisplayFor(modelItem => Model.First().Firm);
+        </div>
+
+        <!--Данные отправляются с помощью POST запроса-->
+    </p>
+    <p>
+        <div style="color:aqua">@ViewBag.Parent</div>
+        <br />
+        <div>@ViewBag.Message</div>
+    </p>
+    @using (Html.BeginForm())
+    {
+        <input type="text" name="message" />
+        <input type="submit" value="Отправить на сервер" />
+    }
+</section>
+@Html.Partial("_Aside")
+
+

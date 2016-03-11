@@ -86,6 +86,17 @@ namespace Shop.Controllers
         //    OrdersData3();
         //    return PartialView(data);
         //}
+        public ActionResult ComputersWebGrid()
+        {
+
+            var phones = db.Comp.Select(p => p.Firm);
+            //  ViewBag.ApplyDiscount;
+            //   ViewBag.ApplyDiscount = ViewData.Computers2.checbox1;
+            //ViewBag.ApplyDiscount = Request.Form["checbox1"];
+            ViewBag.Parent = "нееет";
+            ViewBag.ParentID = new SelectList(phones);//new SelectList("all",phones);
+            return View(db.Comp.ToList());
+        }
         public ActionResult Computers2()
         {
             
